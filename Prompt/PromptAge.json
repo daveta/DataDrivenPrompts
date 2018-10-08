@@ -1,0 +1,39 @@
+﻿{
+  "name": "userage_prompt",
+  "prompt": "What is your age?",
+  "retry_prompt":  "Age must be number between 0 and 150, try entering again.",
+  // type : [ string | int ]
+  "type": "int",
+
+  // run_mode [ training | dev | none ]
+  "run_mode": "none",
+
+  // Dispatch/QnA/LUIS first class with prompt.
+  "model": {
+    "name": "getUserProfile",
+    "type": "luis",
+    "description": "Common model",
+    "matching_entities": [ "userName_patternAny", "userName" ]
+  },
+
+  // Data collection first class with prompt.
+  "telemetry": [
+    {
+      "custom_event_name": "custom1",
+      "fields": [
+        "Activity.LocalTimestamp",
+        "Activity.Id as activityid",
+        "Activity.Text as msg",
+        "RecognizerResult.Intents as intents"
+      ]
+    },
+    {
+      "custom_event_name": "top_intent_activity",
+      "properties": [
+        "Activity.LocalTimestamp",
+        "Activity.Id",
+        "Prompt.Value"
+      ]
+    }
+  ]
+}

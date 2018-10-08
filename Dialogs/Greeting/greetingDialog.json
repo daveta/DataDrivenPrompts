@@ -1,0 +1,17 @@
+﻿{
+  "name": "greeting",
+  "prompts": [ "username_prompt", "userage_prompt", "card_prompt" ],
+  "dispatch_intents": [ "greeting" ],
+  "run_mode": "none",
+
+  // Data collection across prompts
+  "telemetry": [
+    {
+      "custom_event_name": "custom1",
+      "properties": [
+        "username_prompt.Activity.LocalTimestamp",
+        "age_prompt.Activity.Id as activityid"
+      ]
+    }
+  ]
+}
