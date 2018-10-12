@@ -20,7 +20,7 @@ git clone https://github.com/Microsoft/botbuilder-samples.git
         msbot clone -n <YOUR-BOT-NAME> -f deploymentScripts/msbotClone -l <Bot service location> --luisAuthoringKey <Key from step-2 above> --subscriptionId <Key from step-1 above>
         ```
 		The secret used to decrypt dd66.bot is:
-ybcatNUhLq8iLyohF7IJtpdypCYRtlflJq17xbmxt70=
+
 NOTE: This secret is not recoverable and you should store this secret in a secure place according to best security practices.
 Your project may be configured to rely on this secret and you should update it as appropriate.
 dd66.bot created.
